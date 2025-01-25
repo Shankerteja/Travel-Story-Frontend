@@ -21,7 +21,7 @@ function Login() {
   }  
   const handleSumbit=async (event)=>{
     event.preventDefault()
-    console.log("clicked")
+   
 
     if(!validateEmail(email)){
       setError("Please enter a valid email address")

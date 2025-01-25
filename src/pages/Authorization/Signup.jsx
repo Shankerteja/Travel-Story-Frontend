@@ -11,10 +11,10 @@ function Signup() {
   const [error,setError]=useState(null)
   const [name,setName]=useState("")
   const navigate=useNavigate()
-  console.log(email)
+
   const handleSumbit=async (event)=>{
     event.preventDefault()
-    console.log("clicked")
+   
     if(!name){
       setError("Please enter your name")
       return
