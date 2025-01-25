@@ -106,6 +106,7 @@ const AddEditModal = ({type,storyInfo,onClose,getAllStories}) => {
 
             const response=await axoisInstance.put("/edit-post/"+storyId,postData)
             if(response.data && response.data.story){
+                console.log("Updated ")
                 toast.success("story Updated Successfully")
                 getAllStories()
                 onClose()
@@ -189,7 +190,7 @@ const AddEditModal = ({type,storyInfo,onClose,getAllStories}) => {
             <div className='my-3'>
                 <DateSelector date={visitedDate} setDate={setVisitedDate}/>
             </div>
-            <ImageSelector image={image} setImage={setImage} handleDeleteImage={handleDeleteImage}/>
+            <ImageSelector image={image} setImage={setImage} handleDeleteImage={handleDeleteImage} type={type}/>
             <div className='flex flex-col gap-4'>
                 <label className='text-sm text-slate-500'>
                     STORY

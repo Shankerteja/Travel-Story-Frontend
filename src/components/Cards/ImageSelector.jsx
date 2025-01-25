@@ -3,15 +3,18 @@ import {useState,useRef,useEffect} from 'react'
 import { FaRegFileImage } from 'react-icons/fa'
 import {MdDeleteOutline} from 'react-icons/md'
 
-const ImageSelector = ({image,setImage,handleDeleteImage}) => {
+const ImageSelector = ({image,setImage,handleDeleteImage,type}) => {
     const inputRef=useRef(null)
     const [imagePreview,setImagePreview]=useState(null)
 
     const chooseFileImage=()=>{
+       
         inputRef.current.click()
+
     }
 const handleImageOnchange=(event)=>{
     const file=event.target.files[0]
+
     if(file){
         setImage(file)
     }
@@ -34,8 +37,19 @@ useEffect(()=>{
 
 },[image])
 const removeImage=()=>{
-    handleDeleteImage()
+    if (inputRef.current) {
+        inputRef.current.value = ""; // Reset the file input value
+      }
     setImage(null)
+  
+    if(type!=='add'){
+        console.log(type)
+        handleDeleteImage()
+
+    }
+  
+ 
+  
 
 }
 
