@@ -16,11 +16,10 @@ export default {
       screens: {
         // Custom breakpoints
         xs: '0px', },
-      backgroundImage:{
-        'login-image':"url('./src/assets/nature.jpg')",
-        'signup-image':"url('./src/assets/butterfly.jpg')",
-
-      }
+        backgroundImage: {
+          'login-image': "url('/assets/nature.jpg')", // Use absolute path starting from `/`
+          'signup-image': "url('/assets/butterfly.jpg')",
+        },
     },
   },
   plugins: [
