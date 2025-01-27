@@ -1,23 +1,26 @@
 import React from 'react'
 import PasswordInput from '../../components/PasswordInput'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from "react-router-dom";
 import { redirect } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 import { validateEmail } from '../../utils/helper'
 import axoisInstance from '../../utils/axiosInstance'
+import { Navigate } from 'react-router-dom'
 import '../../utils/password.css'
 function Login() {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const [error,setError]=useState(null)
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+
 
 
   const token=localStorage.getItem('token')
-  console.log(token)
+ 
   if(token){
-    navigate('/')
+    console.log("hi")
+    navigate('/login')
   }  
   const handleSumbit=async (event)=>{
     event.preventDefault()

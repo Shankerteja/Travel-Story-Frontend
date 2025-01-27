@@ -134,9 +134,7 @@ const filterStoriesByDateRange=async(day)=>{
         setfilterType('date')
         SetAllStories(response.data.stories)
       }
-    }
-   
-    
+    }   
   } catch (error) {
     console.log(error)
     console.log("An unexpected error occurred. Please Try Again.")
@@ -210,7 +208,7 @@ const resetFilter=()=>{
       resetFilter();
     }}
     />
-    <div className='flex flex-col-reverse gap-7 md:flex-col-reverse lg:flex-row'>
+    <div className='flex flex-col-reverse gap-7 md:flex-col-reverse lg:flex-row xs:items-center md:items-start' >
       <div className='flex-1'>
         {allStories.length>0 ? (
           <div className='grid lg:grid-cols-3 md:grid-cols-2 gap-3 sm:grid-cols-1'>
@@ -228,7 +226,6 @@ const resetFilter=()=>{
                   onEdit={()=>handleEditView(EachItem)}
                   onClick={()=>handleStoryView(EachItem)}
                   onFavouriteClick={()=>updateFavourite(EachItem)}
-                  
                   />
                 )
                 
